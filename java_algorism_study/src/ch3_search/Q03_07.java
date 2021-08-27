@@ -1,4 +1,4 @@
-package ch3;
+package ch3_search;
 
 import java.util.Arrays;
 import java.util.Comparator;

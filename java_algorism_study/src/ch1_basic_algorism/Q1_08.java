@@ -1,8 +1,9 @@
-package ch1;
+package ch1_basic_algorism;
 
 import java.util.Scanner;
 
 // 가우스의 합
+// 1 ~ 10의 합 == ( 1 + 10 ) * 5
 
 public class Q1_08 {
 	public int gaussSum(int n) {

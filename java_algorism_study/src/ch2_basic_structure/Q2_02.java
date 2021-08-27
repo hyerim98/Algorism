@@ -1,4 +1,4 @@
-package ch2;
+package ch2_basic_structure;
 
 // 배열을 역순으로 바꾸기
 

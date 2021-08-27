@@ -1,8 +1,9 @@
-package ch3;
+package ch3_search;
 
 import java.util.Scanner;
 
 // 선형 검색(순차 검색)
+// 보초법 사용
 
 public class LinearSearch {
 	

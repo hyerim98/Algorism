@@ -1,4 +1,4 @@
-package ch2;
+package ch2_basic_structure;
 
 // 이번 년도 남은 날짜 계산
 

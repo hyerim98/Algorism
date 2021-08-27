@@ -1,4 +1,4 @@
-package ch2;
+package ch2_basic_structure;
 
 import java.util.Scanner;
 

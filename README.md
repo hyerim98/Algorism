@@ -12,8 +12,8 @@
     - 알고리즘 복잡도 : O(log n)   
     - Arrays.binarySearch([], key)   
     - Arrays.binarySearch([], new class(), new comparator())   
-        * class의 인스턴스의 특정 필드를 기준으로 검색하려면 해당 class는 comparable을 구현해서 검색할 필드를 기준으로 정렬한 후,
-          Comparator를 통해 이진검색을 한다.   
+        * class의 인스턴스의 특정 필드를 기준으로 검색하려면 해당 class는 comparator 구현해서 검색할 필드를 기준으로 정렬한 후,
+          이진검색을 한다.   
           
 ## Stack   
 ```

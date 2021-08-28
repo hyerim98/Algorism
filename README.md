@@ -1,4 +1,7 @@
-# Algorism   
+# Data Structure & Algorism   
+* Data Structure : 효율적인 데이터 저장방법(Stack, Queue, List, Tree, Hash)      
+* Algorism : 데이터의 가공 및 처리 방법(버블정렬, 이진탐색, 퀵정렬)   
+
 ## Search   
 1. 선형검색(순차검색)   
     - 데이터가 정렬되어 있을 필요가 없다   

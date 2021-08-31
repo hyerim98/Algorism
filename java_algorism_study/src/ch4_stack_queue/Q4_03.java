@@ -6,26 +6,26 @@ import ch4_stack_queue.TwoStack.AorB;
 
 class TwoStack{
 	
-	int max; //스택 용량
-	int ptrA; //스택A의 현위치
-	int ptrB; //스택B의 현위치
-	int[] stk; //스택 본체
+	int max; // 최대용량
+	int ptrA; // ptrA의 위치
+	int ptrB; // ptrB의 우치
+	int[] stk; // 스택 본체
 	
 	public TwoStack(int max) {
 		this.max = max;
 		ptrA = 0;
-		ptrB = max -1;
+		ptrB = max - 1;
+		
 		try {
 			stk = new int[max];
 		}
 		catch (OutOfMemoryError e) {
 			max = 0;
 		}
-		
 	}
 	
 	public enum AorB{
-		stackA, stackB;
+		stackA, stackB
 	}
 	
 	public static class EmptyIntStackException extends RuntimeException{
@@ -41,109 +41,99 @@ class TwoStack{
 	}
 	
 	public int push(AorB ab, int n) throws OverflowIntStackException{
-		if(ptrA >= ptrB) {
-			throw new OverflowIntStackException();
-		}
+		int num = 0;
 		
 		switch (ab) {
 		case stackA:
-			
-			if(ptrA >= (max / 2) - 1) {
-				System.out.println("stackA가 가득 찼습니다");
-				return -1;
+			if(ptrA >= (max / 2) + 1) {
+				throw new OverflowIntStackException();
 			}
 			
-			stk[ptrA++] = n;
+			num = stk[ptrA++] = n;
+			
+			break;
 
 		case stackB:
-			if(ptrB <= (max / 2) + 1) {
-				System.out.println("stackB가 가득 찼습니다");
-				return -1;
+			if(ptrB <= (max / 2)) {
+				throw new OverflowIntStackException();
 			}
 			
-			stk[ptrB--] = n;
+			num = stk[ptrB--] = n;
+			
+			break;
 		}
 		
-		return n;
+		return num;
+		
 		
 	}
 	
 	public int pop(AorB ab) throws EmptyIntStackException{
-		int n = 0;
-		
-		if(ptrA == 0 && ptrB == max) {
-			throw new EmptyIntStackException();
-		}
+		int num = 0;
 		
 		switch (ab) {
 		case stackA:
 			
-			if(ptrA == 0) {
-				System.out.println("stackA가 비었습니다");
-				return -1;
+			if(ptrA <= 0) {
+				throw new EmptyIntStackException();
 			}
 			
-			n = stk[--ptrA];
+			num = stk[--ptrA];
+			
 			break;
 
 		case stackB:
-			if(ptrB == max) {
-				System.out.println("stackB가 비었습니다");
-				return -1;
+			
+			if(ptrB >= max) {
+				throw new EmptyIntStackException();
 			}
 			
-			n = stk[++ptrB];
+			num = stk[++ptrB];
+			
 			break;
 		}
 		
-		return n;
+		return num;
 		
 	}
 	
 	public int peek(AorB ab) throws EmptyIntStackException{
-		int n = 0;
-		
-		if(ptrA == 0 && ptrB == max) {
-			throw new EmptyIntStackException();
-		}
+		int num = 0;
 		
 		switch (ab) {
 		case stackA:
 			
-			if(ptrA == 0) {
-				System.out.println("stackA가 비었습니다");
-				return -1;
+			if(ptrA <= 0) {
+				throw new EmptyIntStackException();
 			}
 			
-			n = stk[ptrA - 1];
+			num = stk[ptrA - 1];
+			
 			break;
 
 		case stackB:
-			if(ptrB == max) {
-				System.out.println("stackB가 비었습니다");
-				return -1;
+			
+			if(ptrB >= max) {
+				throw new EmptyIntStackException();
 			}
 			
-			n = stk[ptrB + 1];
+			num = stk[ptrB + 1];
+			
 			break;
 		}
 		
-		return n;
+		return num;
 		
 	}
 	
 	public void dump(AorB ab) {
-		if(ptrA == 0 && ptrB == max) {
-			throw new EmptyIntStackException();
-		}
-		
 		switch (ab) {
 		case stackA:
 			
-			if(ptrA == 0) {
-				System.out.println("stackA가 비었습니다");
-				return;
+			if(ptrA <= 0) {
+				throw new EmptyIntStackException();
 			}
+			
 			for(int i = 0; i < ptrA; i++) {
 				System.out.print(stk[i] + " ");
 			}
@@ -152,45 +142,46 @@ class TwoStack{
 			break;
 
 		case stackB:
-			if(ptrB == max) {
-				System.out.println("stackB가 비었습니다");
-				return;
+			
+			if(ptrB >= max) {
+				throw new EmptyIntStackException();
 			}
-			for(int i = max - 1; i >= ptrB + 1; i--) {
+			
+			for(int i = max - 1; i > ptrB; i--) {
 				System.out.print(stk[i] + " ");
 			}
 			System.out.println();
-			break;
 			
-		default : 
-			return;
+			
+			break;
 		}
 	}
 	
 	public int indexOf(AorB ab, int n){
+		
 		switch (ab) {
 		case stackA:
-			for(int i = ptrA - 1; i >= 0; i--) {
+			
+			for(int i = 0; i < ptrA; i++) {
 				if(stk[i] == n) {
 					return i;
 				}
 			}
 			
-			return -1;
+			break;
 
 		case stackB:
-			for(int i = max - 1; i >= ptrB + 1; i--) {
+			
+			for(int i = max - 1; i > ptrB; i--) {
 				if(stk[i] == n) {
 					return i;
 				}
 			}
 			
-			return -1;
-			
-		default : 
-			return -1;
+			break;
 		}
-
+		
+		return -1;
 	}
 	
 	

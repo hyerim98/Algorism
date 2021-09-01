@@ -1,19 +1,19 @@
 package ch4_stack_queue;
 
-// int형 데이터를 쌓을 수 있는 queue 구현
+// 객체형 데이터를 쌓을 수 있는 queue 구현
 
-class Queue{
+class Gqueue<E>{
 	int max; // 최대 용량
 	int front; // 앞쪽
 	int rear; // 뒤쪽
 	int num; // 현재 데이터 수
-	int[] que; // 큐의 본체
+	E[] que; // 큐의 본체
 	
-	public Queue(int max) {
+	public Gqueue(int max) {
 		this.max = max;
 		num = front = rear = 0;
 		try {
-			que = new int[max];
+			que = (E[])new Object[max];
 		}
 		catch (OutOfMemoryError e) {
 			max = 0;
@@ -32,7 +32,7 @@ class Queue{
 		}
 	}
 	
-	public int enque(int n) throws OverflowIntStackException{
+	public E enque(E n) throws OverflowIntStackException{
 		if(num >= max) {
 			throw new OverflowIntStackException();
 		}
@@ -48,13 +48,13 @@ class Queue{
 		return n;
 	}
 	
-	public int deque() throws EmptyIntStackException{
+	public E deque() throws EmptyIntStackException{
 		if(num <= 0) {
 			throw new EmptyIntStackException();
 		}
 		
 		num--;
-		int n = que[front++];
+		E n = que[front++];
 		if(front == max) {
 			front = 0;
 		}
@@ -62,7 +62,7 @@ class Queue{
 		return n;
 	}
 	
-	public int peek() throws EmptyIntStackException{
+	public E peek() throws EmptyIntStackException{
 		if(num <= 0) {
 			throw new EmptyIntStackException();
 		}
@@ -83,21 +83,21 @@ class Queue{
 		System.out.println();
 	}
 	
-	public int indexOf(int n) {
+	public int indexOf(E n) {
 		for(int i = 0; i < num; i++) {
 			int idx = (i + front) % max;
-			if(que[idx] == n) {
+			if(que[idx].equals(n)) {
 				return idx;
 			}
 		}
 		return -1;
 	}
 	
-	public int search(int x) {
+	public int search(E x) {
 		
 		for(int i = 0; i < num; i++) {
 			int idx = (i + front) % max;
-			if(que[idx] == x) {
+			if(que[idx].equals(x)) {
 				return i + 1;
 			}
 		}
@@ -106,16 +106,16 @@ class Queue{
 	}
 }
 
-public class QueueImplement {
+public class QueueImplement_E {
 
 	public static void main(String[] args) {
-		Queue queue = new Queue(5);
+		Gqueue<String> queue = new Gqueue(5);
 		
-		queue.enque(1);
-		queue.enque(2);
-		queue.enque(3);
-		queue.enque(4);
-		queue.enque(5);
+		queue.enque("one");
+		queue.enque("two");
+		queue.enque("three");
+		queue.enque("four");
+		queue.enque("five");
 		
 		queue.dump();
 		
@@ -124,9 +124,9 @@ public class QueueImplement {
 		
 		queue.dump();
 		
-		System.out.println(queue.indexOf(5));
+		System.out.println(queue.indexOf("three"));
 		
-		System.out.println(queue.search(3));
+		System.out.println(queue.search("four"));
 		
 
 	}

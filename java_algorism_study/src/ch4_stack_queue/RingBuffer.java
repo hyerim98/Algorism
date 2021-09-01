@@ -2,6 +2,8 @@ package ch4_stack_queue;
 
 import java.util.Scanner;
 
+// 링버퍼 구현
+
 public class RingBuffer {
 
 	public static void main(String[] args) {

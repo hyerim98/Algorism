@@ -5,7 +5,7 @@ import java.util.Scanner;
 // 가우스의 합
 // 1 ~ 10의 합 == ( 1 + 10 ) * 5
 
-public class Q1_08 {
+public class Pra {
 	public int gaussSum(int n) {
 		int sum = (1 + n) * (n / 2);
 		
@@ -18,11 +18,9 @@ public class Q1_08 {
 
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("정수 : ");
-		int n = sc.nextInt();
-		Q1_08 q1_08 = new Q1_08();
-		System.out.println(q1_08.gaussSum(n));
-
+		
+		System.out.print("양의 정수 : ");
+		int num = sc.nextInt();
 	}
 
 }

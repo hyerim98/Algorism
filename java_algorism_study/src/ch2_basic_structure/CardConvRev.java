@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 // 10진수를 다른 진수로 변환
 
-public class Q2_06 {
+public class CardConvRev {
 	
 	public static int cardConv(int x, int r, char[]d) {
 		int digits = 0;

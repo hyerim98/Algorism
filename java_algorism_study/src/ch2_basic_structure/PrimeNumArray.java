@@ -5,7 +5,7 @@ import java.util.Scanner;
 // 소수 구하기
 // 소수를 배열에 담아서 해당 배열를 이용하여 소수 찾기
 
-public class PrimeNum {
+public class PrimeNumArray {
 	
 	public static int primeFunc(int n, int[] prime) {
 		int idx = 1;

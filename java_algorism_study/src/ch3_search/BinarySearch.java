@@ -2,17 +2,17 @@ package ch3_search;
 
 import java.util.Scanner;
 
-// 이진 검색
+// 이진 검색 : 오름 차순, 내림 차순으로 정렬된 배열에서 검색하는 알고리즘
+// 시간 복잡도 : log n
 
 public class BinarySearch {
 	
 	public static int binary(int[]arr, int n, int key) {
 		int pl = 0;
 		int pr = n - 1;
+		int pc = n / 2;
 		
 		do {
-			int pc = (pl + pr) / 2;
-			
 			if(arr[pc] < key) {
 				pl = pc + 1;
 			}
@@ -24,6 +24,8 @@ public class BinarySearch {
 			else {
 				return pc;
 			}
+			
+			pc = (pl + pr) / 2;
 			
 		}while(pl <= pr);
 		
@@ -38,6 +40,7 @@ public class BinarySearch {
 		
 		arr[0] = 1;
 		
+		// 오름차순 정렬되도록
 		for(int i = 1; i < arr.length; i++) {
 			do {
 				
@@ -46,7 +49,10 @@ public class BinarySearch {
 			}while(arr[i] < arr[i - 1]);
 		}
 		
-		int idx = binary(arr, arr.length, 4);
+		System.out.print("검색할 값 : ");
+        int key = sc.nextInt();
+		
+		int idx = binary(arr, arr.length, key);
 		
 		if(idx < 0) {
 			System.out.println("존재하지 않습니다");

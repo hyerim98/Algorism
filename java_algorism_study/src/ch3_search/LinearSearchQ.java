@@ -5,7 +5,7 @@ import java.util.Scanner;
 // 순차 검색 심화 문제
 // {1, 9, 2, 9, 4, 6, 7, 9} ==> key : 9 ==> { 1, 3, 7} ==> return 3
 
-public class Q03_03 {
+public class LinearSearchQ {
 	
 	public static int searchIdx(int[]arr, int n, int key, int[]arrIdx) {
 		int i = 0, j = 0;
@@ -26,8 +26,10 @@ public class Q03_03 {
 		int[]arr = {1, 9, 2, 9, 4, 6, 7, 9};
 		int[]arrIdx = new int[arr.length];
 		
+		System.out.print("검색할 값 : ");
+        int key = sc.nextInt();
 		
-		int idx = searchIdx(arr, arr.length, 9, arrIdx);
+		int idx = searchIdx(arr, arr.length, key, arrIdx);
 		
 		if(idx == 0) {
 			System.out.println("존재하지 않습니다");

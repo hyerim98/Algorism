@@ -1,6 +1,22 @@
 # Data Structure & Algorism   
-* Data Structure : 효율적인 데이터 저장방법(Stack, Queue, List, Tree, Hash)      
-* Algorism : 데이터의 가공 및 처리 방법(버블정렬, 이진탐색, 퀵정렬)   
+* Data Structure : 데이터를 효율적으로 저장하는 구조(Stack, Queue, List, Tree, Hash)      
+* Algorism : 어떠한 문제를 해결하기 위해 정해진 일련의 절차나 방법(버블정렬, 이진탐색, 퀵정렬)
+
+## chapter1
+* 양의 정수 자릿수 구하기
+* 가우스 덧셈
+* IntStream을 이용한 구구단 출력
+* 스트림을 이용한 최댓값, 최솟값 구하기
+* 정렬을 이용하여 중앙값 구하기
+* 소수 구하기(Array, List)
+
+## chapter2
+* LocalDate 클래스를 이용하여 며칠 후, 전의 날짜 구하기, 그 해 경과일 수, 남은일 수 구하기
+* 배열 역순 복사
+* 배열 순서 변경
+* 10진수를 다른 진수로 변환
+* 소수 구하기
+* 
 
 ## Search   
 1. 선형검색(순차검색)   

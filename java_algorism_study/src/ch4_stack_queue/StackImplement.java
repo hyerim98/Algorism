@@ -22,18 +22,19 @@ class Stack<E>{
 	
 	public static class EmptyIntStackException extends RuntimeException{
 		public EmptyIntStackException() {
-			
+			super("스택이 비어있습니다.");
 		}
 	}
 	
 	public static class OverflowIntStackException extends RuntimeException{
 		public OverflowIntStackException() {
-			
+			super("스택이 가득 차 있습니다.");
 		}
 	}
 	
 	public E push(E n) throws OverflowIntStackException{
 		if(ptr >= max) {
+			// 예외 발생
 			throw new OverflowIntStackException();
 		}
 		

@@ -8,7 +8,7 @@ class TwoStack{
 	
 	int max; // 최대용량
 	int ptrA; // ptrA의 위치
-	int ptrB; // ptrB의 우치
+	int ptrB; // ptrB의 위치
 	int[] stk; // 스택 본체
 	
 	public TwoStack(int max) {
@@ -30,13 +30,13 @@ class TwoStack{
 	
 	public static class EmptyIntStackException extends RuntimeException{
 		public EmptyIntStackException() {
-			
+			super("스택이 비어있습니다.");
 		}
 	}
 	
 	public static class OverflowIntStackException extends RuntimeException{
 		public OverflowIntStackException() {
-			
+			super("스택이 가득 차 있습니다.");
 		}
 	}
 	
@@ -46,6 +46,7 @@ class TwoStack{
 		switch (ab) {
 		case stackA:
 			if(ptrA >= (max / 2) + 1) {
+				// 예외 발생
 				throw new OverflowIntStackException();
 			}
 			
@@ -187,7 +188,7 @@ class TwoStack{
 	
 }
 
-public class Q4_03 {
+public class TwoStackImpl {
 
 	public static void main(String[] args) {
 		TwoStack stack = new TwoStack(11);

@@ -29,16 +29,26 @@
     - Arrays.binarySearch([], new class(), new comparator())   
         * class의 인스턴스의 특정 필드를 기준으로 검색하려면 해당 class는 comparator 구현해서 검색할 필드를 기준으로 정렬한 후,
           이진검색을 한다.   
-          
-## Stack   
+
+## chapter4
+### Stack   
+* 스택 구현
 ```
 class stack{
     int max; // 스택 용량
     int ptr; // 스택 포인터
     int[] stk; // 스택의 본체
 }
-```   
-## Queue(ring buffer)   
+```
+* 하나의 배열을 공유하여 2개의 스택을 구현
+```
+int max; // 최대용량
+int ptrA; // ptrA의 위치
+int ptrB; // ptrB의 위치
+int[] stk; // 스택 본체
+```
+   
+### Queue(ring buffer)   
 ```
 class queue{
     int max; // 큐의 용량

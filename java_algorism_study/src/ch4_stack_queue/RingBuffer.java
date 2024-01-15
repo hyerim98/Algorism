@@ -2,7 +2,7 @@ package ch4_stack_queue;
 
 import java.util.Scanner;
 
-// 링버퍼 구현
+// 링버퍼 구현(오래된 데이터를 버리는 용도)
 
 public class RingBuffer {
 

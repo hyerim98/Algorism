@@ -1,7 +1,7 @@
 package ch4_stack_queue;
 
 
-// 객체형 데이터를 쌓을 수 있는 queue 구현
+// 객체형 데이터를 쌓을 수 있는 queue 구현(ring buffer 사용)
 
 class Gqueue<E>{
 	int max; // 최대 용량

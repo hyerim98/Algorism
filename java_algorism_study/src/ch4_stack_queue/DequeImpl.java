@@ -92,13 +92,11 @@ class Deque{
 		
 		num--;
 		
-		int n = que[rear++];
-		
 		if(rear == max) {
 			rear = 0;
 		}
 	
-		return n;
+		return que[rear++];
 	}
 	
 	public int peekFront() throws EmptyIntStackException{
@@ -132,8 +130,11 @@ class Deque{
 	}
 	
 	public int indexOf(int n) {
+		if(num <= 0) {
+			return -1;
+		}
 		
-		for(int i = 1; i <= num; i++) {
+		for(int i = 0; i < num; i++) {
 			if(que[(i + rear) % max] == n) {
 				return (i + rear) % max;
 			}
@@ -144,7 +145,7 @@ class Deque{
 	
 }
 
-public class Q4_07 {
+public class DequeImpl {
 
 	public static void main(String[] args) {
 		Deque queue = new Deque(5);

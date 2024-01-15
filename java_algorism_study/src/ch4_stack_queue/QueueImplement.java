@@ -1,6 +1,7 @@
 package ch4_stack_queue;
 
-// int형 데이터를 쌓을 수 있는 queue 구현
+// int형 데이터를 쌓을 수 있는 queue 구현(ring buffer 사용)
+// 시간 복잡도 : O(1)
 
 class Queue{
 	int max; // 최대 용량
@@ -83,6 +84,7 @@ class Queue{
 		System.out.println();
 	}
 	
+	// 찾은 값 위치의 배열 인덱스를 반환
 	public int indexOf(int n) {
 		for(int i = 0; i < num; i++) {
 			int idx = (i + front) % max;
@@ -93,6 +95,7 @@ class Queue{
 		return -1;
 	}
 	
+	// 큐 안에서 찾은 값이 몇 번째에 있는지 반환
 	public int search(int x) {
 		
 		for(int i = 0; i < num; i++) {

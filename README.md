@@ -48,7 +48,9 @@ int ptrB; // ptrB의 위치
 int[] stk; // 스택 본체
 ```
    
-### Queue(ring buffer)   
+### Queue(ring buffer)
+* ring buffer를 활용한 큐 구현
+* enque, deque 알고리즘 복잡도 : O(1)
 ```
 class queue{
     int max; // 큐의 용량
@@ -57,4 +59,6 @@ class queue{
     int num; // 현재 데이터 수
     int[] que; // 큐 본체
 }
-```   
+```
+
+* 양방향 대기열 deque 구현

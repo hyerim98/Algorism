@@ -49,7 +49,7 @@ int[] stk; // 스택 본체
 ```
    
 ### Queue(ring buffer)
-1. ring buffer를 활용한 큐 구현
+* ring buffer를 활용한 큐 구현
     * enque, deque 알고리즘 복잡도 : O(1)
 ```
 class queue{
@@ -61,4 +61,4 @@ class queue{
 }
 ```
 
-2. 양방향 대기열 deque 구현
+* 양방향 대기열 deque 구현
